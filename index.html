@@ -1,121 +1,1590 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2868
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pizzeria La Piazza Rustica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f0d0b;
+      --bg2: #181410;
+      --bg3: #211c16;
+      --card: #1c1710;
+      --card2: #241f17;
+      --border: rgba(255,210,120,0.10);
+      --border2: rgba(255,210,120,0.18);
+      --text: #f5ead8;
+      --text2: #c9b898;
+      --muted: #7a6a54;
+      --gold: #d4a843;
+      --gold2: #f0c96a;
+      --amber: #c8622a;
+      --ember: #e07840;
+      --red: #c0392b;
+      --red2: #e04535;
+      --cream: #f9f0e1;
+      --shadow-gold: 0 8px 40px rgba(212,168,67,0.15);
+      --shadow-dark: 0 20px 60px rgba(0,0,0,0.6);
+      --radius: 4px;
+      --radius-lg: 8px;
+    }
 
-\f0\fs24 \cf0 <!DOCTYPE html>\
-<html lang="ro">\
-<head>\
-  <meta charset="UTF-8" />\
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />\
-  <title>Site simplu</title>\
-  <style>\
-    body \{\
-      margin: 0;\
-      font-family: Arial, sans-serif;\
-      background-color: #f4f4f4;\
-      color: #222;\
-    \}\
-\
-    header \{\
-      background-color: #2d89ef;\
-      color: white;\
-      text-align: center;\
-      padding: 30px 20px;\
-    \}\
-\
-    nav \{\
-      background-color: #222;\
-      text-align: center;\
-      padding: 10px;\
-    \}\
-\
-    nav a \{\
-      color: white;\
-      text-decoration: none;\
-      margin: 0 15px;\
-      font-weight: bold;\
-    \}\
-\
-    nav a:hover \{\
-      text-decoration: underline;\
-    \}\
-\
-    main \{\
-      max-width: 900px;\
-      margin: 30px auto;\
-      background: white;\
-      padding: 20px;\
-      border-radius: 10px;\
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\
-    \}\
-\
-    section \{\
-      margin-bottom: 30px;\
-    \}\
-\
-    h2 \{\
-      color: #2d89ef;\
-    \}\
-\
-    .btn \{\
-      display: inline-block;\
-      background-color: #2d89ef;\
-      color: white;\
-      padding: 10px 18px;\
-      border-radius: 6px;\
-      text-decoration: none;\
-    \}\
-\
-    .btn:hover \{\
-      background-color: #1b5fa7;\
-    \}\
-\
-    footer \{\
-      text-align: center;\
-      background-color: #222;\
-      color: white;\
-      padding: 15px;\
-      margin-top: 30px;\
-    \}\
-  </style>\
-</head>\
-<body>\
-  <header>\
-    <h1>Bine ai venit pe site-ul meu</h1>\
-    <p>Acesta este un site simplu f\uc0\u259 cut \'een HTML \u537 i CSS.</p>\
-  </header>\
-\
-  <nav>\
-    <a href="#despre">Despre</a>\
-    <a href="#servicii">Servicii</a>\
-    <a href="#contact">Contact</a>\
-  </nav>\
-\
-  <main>\
-    <section id="despre">\
-      <h2>Despre mine</h2>\
-      <p>Salut! Acesta este un exemplu de pagin\uc0\u259  web simpl\u259 . Po\u539 i modifica acest text \u537 i s\u259  adaugi informa\u539 iile tale.</p>\
-    </section>\
-\
-    <section id="servicii">\
-      <h2>Servicii</h2>\
-      <p>Aici po\uc0\u539 i scrie ce oferi: proiecte \u537 colare, prezent\u259 ri, programare, design sau orice altceva.</p>\
-      <a href="#contact" class="btn">Contacteaz\uc0\u259 -m\u259 </a>\
-    </section>\
-\
-    <section id="contact">\
-      <h2>Contact</h2>\
-      <p>Email: exemplu@email.com</p>\
-      <p>Telefon: 0700 000 000</p>\
-    </section>\
-  </main>\
-\
-  <footer>\
-    <p>&copy; 2026 Site simplu. Toate drepturile rezervate.</p>\
-  </footer>\
-</body>\
-</html>\
-}
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* NOISE TEXTURE OVERLAY */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.5;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    button { font: inherit; cursor: pointer; }
+    h1, h2, h3, h4, p { margin-top: 0; }
+
+    .container {
+      width: min(1200px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    /* DECORATIVE LINE */
+    .ornament {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--gold);
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+    }
+    .ornament::before, .ornament::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      max-width: 80px;
+    }
+
+    /* ─── NAV ─── */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(15,13,11,0.90);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-height: 80px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1.5px solid var(--gold);
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+      background: linear-gradient(135deg, #2a1f0e, #1a1208);
+      box-shadow: 0 0 20px rgba(212,168,67,0.2), inset 0 1px 0 rgba(255,255,255,0.05);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--gold2);
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+    }
+
+    .brand-sub {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      color: var(--text2);
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-links a { transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold2); }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn {
+      border: none;
+      padding: 11px 22px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      transition: all 0.25s ease;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #0f0d0b;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 20px rgba(212,168,67,0.3);
+    }
+
+    .btn-gold:hover {
+      background: var(--gold2);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 28px rgba(212,168,67,0.45);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text2);
+      border: 1px solid var(--border2);
+      border-radius: var(--radius);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .cart-toggle {
+      position: relative;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -7px;
+      right: -7px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--amber);
+      color: white;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 92vh;
+      display: grid;
+      place-items: center;
+      position: relative;
+      padding: 60px 0;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212,168,67,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      left: -80px;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(192,57,43,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(212,168,67,0.3);
+      color: var(--gold);
+      padding: 7px 16px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 24px;
+      background: rgba(212,168,67,0.05);
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5.5vw, 5rem);
+      line-height: 1.05;
+      color: var(--cream);
+      margin-bottom: 20px;
+      font-weight: 900;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold2);
+    }
+
+    .hero-desc {
+      color: var(--text2);
+      font-size: 1rem;
+      line-height: 1.75;
+      max-width: 46ch;
+      margin-bottom: 36px;
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--card);
+    }
+
+    .stat {
+      flex: 1;
+      padding: 18px 20px;
+      border-right: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .stat:last-child { border-right: none; }
+
+    .stat-val {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--gold2);
+      display: block;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* HERO VISUAL */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pizza-plate {
+      width: min(100%, 460px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at center, #f0c96a 0% 48%, #b8782a 48% 56%, #8b5e20 56% 62%, rgba(139,94,32,0.2) 62% 65%, transparent 65%),
+        radial-gradient(circle at 38% 35%, #c0392b 0% 7%, transparent 8%),
+        radial-gradient(circle at 66% 30%, #c0392b 0% 6%, transparent 7%),
+        radial-gradient(circle at 55% 58%, #c0392b 0% 6%, transparent 7%),
+        radial-gradient(circle at 30% 64%, #c0392b 0% 6%, transparent 7%),
+        radial-gradient(circle at 70% 62%, #c0392b 0% 5%, transparent 6%),
+        radial-gradient(circle at 48% 28%, #2e7d32 0% 4%, transparent 5%),
+        radial-gradient(circle at 73% 47%, #2e7d32 0% 4%, transparent 5%),
+        radial-gradient(circle at 35% 50%, #2e7d32 0% 4%, transparent 5%),
+        radial-gradient(circle at 57% 74%, #2e7d32 0% 4%, transparent 5%),
+        linear-gradient(135deg, #e8b84b, #d4912a);
+      box-shadow:
+        0 0 0 3px rgba(212,168,67,0.2),
+        0 0 0 12px rgba(212,168,67,0.06),
+        0 40px 80px rgba(0,0,0,0.8),
+        inset 0 2px 6px rgba(255,255,255,0.15);
+      position: relative;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .pizza-plate::after {
+      content: '';
+      position: absolute;
+      inset: 12%;
+      border-radius: 50%;
+      border: 1.5px dashed rgba(255,255,255,0.2);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(-1deg); }
+      50% { transform: translateY(-18px) rotate(1deg); }
+    }
+
+    .hero-badge {
+      position: absolute;
+      background: var(--card2);
+      border: 1px solid var(--border2);
+      border-radius: var(--radius-lg);
+      padding: 14px 18px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-badge strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 0.95rem;
+      color: var(--gold2);
+    }
+
+    .hero-badge small {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    .badge-a { top: 10%; right: -5%; animation: float 6s ease-in-out infinite reverse; }
+    .badge-b { bottom: 10%; left: -5%; animation: float 7s ease-in-out 1s infinite; }
+
+    /* ─── SECTIONS ─── */
+    section { padding: 80px 0; }
+
+    .section-tag {
+      font-size: 0.75rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1.15;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--gold2);
+    }
+
+    .section-desc {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      max-width: 54ch;
+      font-weight: 300;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    /* ─── FEATURES ─── */
+    #despre { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--border);
+    }
+
+    .feature-card {
+      background: var(--card);
+      padding: 36px 30px;
+      transition: background 0.3s;
+      position: relative;
+    }
+
+    .feature-card:hover { background: var(--card2); }
+
+    .feature-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(212,168,67,0.12), rgba(212,168,67,0.04));
+      border: 1px solid rgba(212,168,67,0.2);
+      display: grid;
+      place-items: center;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+    }
+
+    .feature-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--gold2);
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .feature-card p {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.9rem;
+      font-weight: 300;
+    }
+
+    /* ─── MENU ─── */
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+
+    .filter-btn {
+      border: 1px solid var(--border2);
+      background: transparent;
+      color: var(--text2);
+      border-radius: var(--radius);
+      padding: 9px 18px;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .filter-btn.active {
+      background: var(--gold);
+      color: #0f0d0b;
+      border-color: var(--gold);
+      font-weight: 700;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .menu-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .menu-card:hover {
+      border-color: var(--border2);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(212,168,67,0.1);
+    }
+
+    .menu-image {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .menu-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .menu-card:hover .menu-image img { transform: scale(1.08); }
+
+    .menu-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.5));
+    }
+
+    .tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 1;
+      background: rgba(0,0,0,0.75);
+      border: 1px solid rgba(212,168,67,0.3);
+      color: var(--gold2);
+      padding: 5px 10px;
+      border-radius: var(--radius);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      backdrop-filter: blur(8px);
+    }
+
+    .menu-content {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      flex: 1;
+    }
+
+    .menu-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--cream);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .menu-content p {
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.6;
+      min-height: 60px;
+      font-weight: 300;
+      margin-bottom: 0;
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+
+    .price {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--gold2);
+    }
+
+    .add-btn {
+      background: transparent;
+      border: 1px solid rgba(212,168,67,0.3);
+      color: var(--gold);
+      border-radius: var(--radius);
+      padding: 8px 14px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      transition: all 0.2s;
+    }
+
+    .add-btn:hover {
+      background: var(--gold);
+      color: #0f0d0b;
+      border-color: var(--gold);
+    }
+
+    /* ─── REVIEWS ─── */
+    #recenzii { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .review-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      position: relative;
+      transition: border-color 0.3s;
+    }
+
+    .review-card:hover { border-color: var(--border2); }
+
+    .review-card::before {
+      content: '"';
+      position: absolute;
+      top: 16px;
+      right: 24px;
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      color: rgba(212,168,67,0.08);
+      line-height: 1;
+    }
+
+    .review-stars {
+      color: var(--gold2);
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+
+    .review-card p {
+      color: var(--text2);
+      line-height: 1.75;
+      font-size: 0.9rem;
+      font-style: italic;
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
+
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .review-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--amber));
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: #0f0d0b;
+    }
+
+    .review-name {
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: var(--text);
+    }
+
+    .review-date {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    /* ─── CONTACT ─── */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .contact-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+    }
+
+    .contact-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--gold2);
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .contact-row {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 14px;
+      font-size: 0.88rem;
+    }
+
+    .contact-row-icon {
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .contact-row strong {
+      display: block;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .contact-row span {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .hours-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .hours-table tr:not(:last-child) td {
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hours-table tr:not(:first-child) td {
+      padding-top: 12px;
+    }
+
+    .hours-table td:last-child {
+      text-align: right;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .hours-table td:first-child {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    /* ─── FOOTER ─── */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+    }
+
+    .footer-brand {
+      font-family: 'Playfair Display', serif;
+      color: var(--gold);
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    /* ─── OVERLAY / CART ─── */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(4px);
+      opacity: 0;
+      pointer-events: none;
+      transition: .25s ease;
+      z-index: 70;
+    }
+
+    .overlay.show { opacity: 1; pointer-events: auto; }
+
+    .cart-panel {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: min(460px, 100%);
+      height: 100vh;
+      z-index: 80;
+      transform: translateX(105%);
+      transition: .3s cubic-bezier(0.32, 0.72, 0, 1);
+      display: flex;
+      flex-direction: column;
+      background: var(--bg2);
+      border-left: 1px solid var(--border);
+    }
+
+    .cart-panel.show { transform: translateX(0); }
+
+    .cart-header {
+      padding: 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .cart-header h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--cream);
+      margin: 0;
+    }
+
+    .cart-header small { color: var(--muted); font-size: 0.78rem; display: block; }
+
+    .cart-items {
+      padding: 20px 24px;
+      overflow-y: auto;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .cart-item {
+      display: grid;
+      grid-template-columns: 70px 1fr auto;
+      gap: 14px;
+      align-items: center;
+      padding: 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      transition: border-color 0.2s;
+    }
+
+    .cart-item:hover { border-color: var(--border2); }
+
+    .cart-item img {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: var(--radius);
+    }
+
+    .cart-item h4 {
+      font-family: 'Playfair Display', serif;
+      margin: 0 0 4px;
+      font-size: 0.9rem;
+      color: var(--cream);
+    }
+
+    .cart-item small { color: var(--muted); display: block; margin-bottom: 8px; font-size: 0.78rem; }
+
+    .qty-controls {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--border2);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    .qty-controls button {
+      border: none;
+      background: transparent;
+      width: 32px;
+      height: 32px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--gold);
+      transition: background 0.2s;
+    }
+
+    .qty-controls button:hover { background: rgba(212,168,67,0.1); }
+
+    .qty-controls span {
+      min-width: 32px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+
+    .remove-btn {
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 0;
+      transition: color 0.2s;
+    }
+
+    .remove-btn:hover { color: var(--red2); }
+
+    .cart-empty {
+      text-align: center;
+      color: var(--muted);
+      padding: 48px 24px;
+      border: 1px dashed var(--border);
+      border-radius: var(--radius-lg);
+      font-size: 0.9rem;
+    }
+
+    .cart-empty h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--text2);
+      margin-bottom: 8px;
+    }
+
+    .cart-footer {
+      padding: 20px 24px;
+      border-top: 1px solid var(--border);
+      background: var(--bg2);
+    }
+
+    .checkout-form {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .checkout-form input,
+    .checkout-form textarea {
+      width: 100%;
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: var(--radius);
+      padding: 11px 14px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      resize: vertical;
+      min-height: 44px;
+      transition: border-color 0.2s;
+    }
+
+    .checkout-form input:focus,
+    .checkout-form textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+
+    .checkout-form input::placeholder,
+    .checkout-form textarea::placeholder {
+      color: var(--muted);
+    }
+
+    .summary {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .summary-row strong { color: var(--text2); font-weight: 500; }
+
+    .summary-row.total {
+      font-size: 1rem;
+      color: var(--cream);
+      font-weight: 700;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+
+    .summary-row.total strong {
+      color: var(--gold2);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+    }
+
+    .checkout-note {
+      font-size: 0.75rem;
+      color: var(--muted);
+      line-height: 1.55;
+      margin-top: 10px;
+      font-weight: 300;
+    }
+
+    /* ─── TOAST ─── */
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 28px;
+      transform: translateX(-50%) translateY(16px);
+      background: var(--card2);
+      border: 1px solid var(--border2);
+      color: var(--text);
+      padding: 12px 20px;
+      border-radius: 999px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+      opacity: 0;
+      pointer-events: none;
+      transition: .25s ease;
+      z-index: 90;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+
+    .toast::before {
+      content: '✦';
+      color: var(--gold);
+      margin-right: 8px;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* ─── DIVIDER ─── */
+    .divider {
+      text-align: center;
+      margin: 0 0 40px;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1100px) {
+      .menu-grid { grid-template-columns: repeat(3, 1fr); }
+      .hero-layout { grid-template-columns: 1fr; text-align: center; }
+      .hero h1 { font-size: 3.2rem; }
+      .hero-desc, .hero-actions { margin-left: auto; margin-right: auto; }
+      .hero-actions { justify-content: center; }
+      .hero-stats { max-width: 460px; margin: 0 auto; }
+      .hero-visual { display: none; }
+    }
+
+    @media (max-width: 820px) {
+      .menu-grid, .reviews-grid, .features-grid { grid-template-columns: 1fr 1fr; }
+      .contact-layout { grid-template-columns: 1fr; }
+      .nav { flex-wrap: wrap; padding: 12px 0; }
+      .nav-links { order: 3; width: 100%; justify-content: center; gap: 20px; font-size: 0.8rem; }
+    }
+
+    @media (max-width: 560px) {
+      .menu-grid, .reviews-grid, .features-grid { grid-template-columns: 1fr; }
+      .hero-stats { flex-direction: column; }
+      .stat { border-right: none; border-bottom: 1px solid var(--border); }
+      .stat:last-child { border-bottom: none; }
+      .cart-item { grid-template-columns: 1fr; }
+      .cart-item img { width: 100%; height: 160px; }
+    }
+
+    /* ─── SCROLL ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-up { animation: fadeUp 0.7s ease both; }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <div class="topbar">
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-logo">🍕</div>
+        <div class="brand-text">
+          <span class="brand-name">La Piazza Rustica</span>
+          <span class="brand-sub">Ristorante & Pizzeria</span>
+        </div>
+      </div>
+
+      <div class="nav-links">
+        <a href="#acasa">Acasă</a>
+        <a href="#meniu">Meniu</a>
+        <a href="#despre">Despre</a>
+        <a href="#recenzii">Recenzii</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <a class="btn btn-outline" href="#meniu">Explorează meniul</a>
+        <button class="btn btn-gold cart-toggle" id="openCartBtn">
+          Coșul meu
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="acasa">
+      <div class="container hero-layout">
+        <div class="fade-up">
+          <div class="hero-label">🔥 Livrare rapidă &nbsp;·&nbsp; Gust autentic italian</div>
+          <h1>Aroma <em>Italiei</em>,<br>direct la ușa ta.</h1>
+          <p class="hero-desc">
+            Alege din meniu, adaugă în coș și trimite comanda instant pe WhatsApp.
+            Pizza, paste și deserturi preparate cu ingrediente proaspete și dragoste autentică.
+          </p>
+          <div class="hero-actions">
+            <a href="#meniu" class="btn btn-gold" style="padding: 14px 32px; font-size: 0.92rem;">Comandă acum</a>
+            <a href="#contact" class="btn btn-outline" style="padding: 14px 28px; font-size: 0.92rem;">Vezi programul</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-val">30–45'</span>
+              <span class="stat-label">Livrare medie</span>
+            </div>
+            <div class="stat">
+              <span class="stat-val">100%</span>
+              <span class="stat-label">Ingrediente proaspete</span>
+            </div>
+            <div class="stat">
+              <span class="stat-val">4.9★</span>
+              <span class="stat-label">Recenzii clienți</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="pizza-plate"></div>
+          <div class="hero-badge badge-a">
+            <strong>Quattro Formaggi</strong>
+            <small>⭐ Cel mai comandat</small>
+          </div>
+          <div class="hero-badge badge-b">
+            <strong>🚚 Livrare rapidă</strong>
+            <small>În tot orașul</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESPRE -->
+    <section id="despre">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-tag">De ce noi</span>
+            <h2 class="section-title">O experiență <em>completă</em></h2>
+          </div>
+          <p class="section-desc">Produse clare, coș intuitiv, total calculat automat și comandă trimisă direct pe WhatsApp.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🍕</div>
+            <h3>Produse afișate clar</h3>
+            <p>Fiecare produs are imagine, denumire, descriere, categorie și preț exact, ca pe un site profesional.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🛒</div>
+            <h3>Coș de cumpărături real</h3>
+            <p>Poți adăuga mai multe produse, mări sau scădea cantitatea și vedea totalul actualizat în timp real.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">💬</div>
+            <h3>Comandă pe WhatsApp</h3>
+            <p>Mesajul se generează automat cu lista produselor, cantități, total, nume, adresă și telefon.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENIU -->
+    <section id="meniu">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-tag">Meniul nostru</span>
+            <h2 class="section-title">Alege <em>favoritul</em> tău</h2>
+          </div>
+          <p class="section-desc">Alege categoria dorită și adaugă produsele preferate în coș. Prețurile sunt afișate în lei.</p>
+        </div>
+
+        <div class="filters" id="filters"></div>
+        <div class="menu-grid" id="menuGrid"></div>
+      </div>
+    </section>
+
+    <!-- RECENZII -->
+    <section id="recenzii">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-tag">Recenzii</span>
+            <h2 class="section-title">Ce spun <em>clienții</em></h2>
+          </div>
+        </div>
+
+        <div class="divider"><div class="ornament">Peste 200 de recenzii pozitive</div></div>
+
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p>Pizza a venit caldă și foarte gustoasă. Mi-a plăcut mult că am putut trimite comanda direct pe WhatsApp, rapid și fără bătăi de cap.</p>
+            <div class="review-author">
+              <div class="review-avatar">AM</div>
+              <div>
+                <div class="review-name">Andrei M.</div>
+                <div class="review-date">Martie 2026</div>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p>Site-ul se mișcă excelent pe telefon. Coșul este ușor de folosit, iar totalul se calculează instant. Design elegant și modern.</p>
+            <div class="review-author">
+              <div class="review-avatar">MT</div>
+              <div>
+                <div class="review-name">Maria T.</div>
+                <div class="review-date">Februarie 2026</div>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p>Design modern, produse clare, imagini frumoase și experiență plăcută. Arată ca un site profesional de restaurant de lux.</p>
+            <div class="review-author">
+              <div class="review-avatar">VC</div>
+              <div>
+                <div class="review-name">Vlad C.</div>
+                <div class="review-date">Ianuarie 2026</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-tag">Contact</span>
+            <h2 class="section-title">Vino să ne <em>vizitezi</em></h2>
+          </div>
+        </div>
+        <div class="contact-layout">
+          <div class="contact-card">
+            <h3>Date de contact</h3>
+            <div class="contact-row">
+              <span class="contact-row-icon">📍</span>
+              <div><strong>Adresă</strong><span>Str. Principală nr. 24, București</span></div>
+            </div>
+            <div class="contact-row">
+              <span class="contact-row-icon">📞</span>
+              <div><strong>Telefon</strong><span>07xx xxx xxx</span></div>
+            </div>
+            <div class="contact-row">
+              <span class="contact-row-icon">💬</span>
+              <div><strong>WhatsApp comenzi</strong><span>407xxxxxxxx</span></div>
+            </div>
+            <div class="contact-row">
+              <span class="contact-row-icon">✉️</span>
+              <div><strong>Email</strong><span>contact@lapiazza.ro</span></div>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <h3>Program de lucru</h3>
+            <table class="hours-table">
+              <tr>
+                <td>Luni – Joi</td>
+                <td>10:00 – 22:00</td>
+              </tr>
+              <tr>
+                <td>Vineri – Sâmbătă</td>
+                <td>10:00 – 23:30</td>
+              </tr>
+              <tr>
+                <td>Duminică</td>
+                <td>11:00 – 21:00</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">La Piazza Rustica</div>
+      © 2026 La Piazza Rustica &nbsp;·&nbsp; Ristorante & Pizzeria &nbsp;·&nbsp; București
+    </div>
+  </footer>
+
+  <!-- OVERLAY -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- CART PANEL -->
+  <aside class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <div>
+        <h3>Coșul tău</h3>
+        <small>Verifică produsele înainte de trimitere</small>
+      </div>
+      <button class="btn btn-outline" id="closeCartBtn" style="padding: 8px 16px; font-size: 0.8rem;">Închide</button>
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-footer">
+      <div class="checkout-form">
+        <input type="text" id="customerName" placeholder="Numele tău" />
+        <input type="tel" id="customerPhone" placeholder="Telefon" />
+        <input type="text" id="customerAddress" placeholder="Adresa de livrare" />
+        <textarea id="customerNotes" placeholder="Detalii suplimentare (etaj, interfon, sosuri etc.)"></textarea>
+      </div>
+
+      <div class="summary">
+        <div class="summary-row"><span>Subtotal</span><strong id="subtotal">0.00 lei</strong></div>
+        <div class="summary-row"><span>Livrare</span><strong id="delivery">15.00 lei</strong></div>
+        <div class="summary-row total"><span>Total</span><strong id="total">15.00 lei</strong></div>
+      </div>
+
+      <button class="btn btn-gold" style="width: 100%; padding: 14px; font-size: 0.9rem; letter-spacing: 0.06em;" id="whatsappOrderBtn">
+        Trimite comanda pe WhatsApp
+      </button>
+      <p class="checkout-note">Schimbă numărul de WhatsApp din cod cu numărul pizzeriei tale reale. Mesajul se deschide automat în aplicație.</p>
+    </div>
+  </aside>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <script>
+    const WHATSAPP_NUMBER = '40768917999';
+    const DELIVERY_FEE = 15;
+
+    const svgImage = (title, bg1, bg2, emoji) => {
+      const svg = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+          <defs>
+            <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="${bg1}" />
+              <stop offset="100%" stop-color="${bg2}" />
+            </linearGradient>
+            <filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feBlend in="SourceGraphic" mode="overlay" result="blend"/></filter>
+          </defs>
+          <rect width="800" height="600" fill="url(#g)"/>
+          <rect width="800" height="600" fill="url(#g)" filter="url(#noise)" opacity="0.12"/>
+          <circle cx="400" cy="255" r="130" fill="rgba(0,0,0,0.18)"/>
+          <text x="400" y="295" font-size="130" text-anchor="middle">${emoji}</text>
+          <text x="400" y="490" font-family="Georgia,serif" font-size="40" font-weight="700" fill="rgba(255,255,255,0.9)" text-anchor="middle">${title}</text>
+          <rect x="0" y="0" width="800" height="600" fill="url(#g)" opacity="0" />
+        </svg>`;
+      return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+    };
+
+    const products = [
+      { id: 1, name: 'Pizza Margherita', category: 'Pizza', price: 31.99, tag: 'Clasică', description: 'Sos de roșii, mozzarella, busuioc proaspăt și blat pufos.', image: svgImage('Pizza Margherita', '#c0392b', '#8b2500', '🍕') },
+      { id: 2, name: 'Pizza Diavola', category: 'Pizza', price: 36.50, tag: 'Picantă', description: 'Mozzarella, salam picant, sos de roșii și fulgi de chili.', image: svgImage('Pizza Diavola', '#922b21', '#5b0e0e', '🌶️') },
+      { id: 3, name: 'Quattro Formaggi', category: 'Pizza', price: 39.99, tag: 'Bestseller', description: 'Mozzarella, gorgonzola, parmezan, cașcaval afumat și oregano.', image: svgImage('Quattro Formaggi', '#b7950b', '#7d6608', '🧀') },
+      { id: 4, name: 'Pizza Prosciutto', category: 'Pizza', price: 37.99, tag: 'Populară', description: 'Sos de roșii, mozzarella, șuncă premium și măsline.', image: svgImage('Pizza Prosciutto', '#a04000', '#6e2c00', '🍕') },
+      { id: 5, name: 'Paste Carbonara', category: 'Paste', price: 33.00, tag: 'Cremoase', description: 'Spaghetti, bacon crocant, sos cremos, parmezan și piper.', image: svgImage('Paste Carbonara', '#1a6b3a', '#0d4a26', '🍝') },
+      { id: 6, name: 'Paste Bolognese', category: 'Paste', price: 34.50, tag: 'Sățioase', description: 'Paste al dente cu sos bogat de carne și parmezan ras.', image: svgImage('Paste Bolognese', '#943126', '#6b1f1a', '🍝') },
+      { id: 7, name: 'Lasagna', category: 'Paste', price: 38.00, tag: 'Cuptor', description: 'Foi de lasagna, ragu, sos bechamel și crustă rumenită.', image: svgImage('Lasagna', '#196f3d', '#0e4226', '🥘') },
+      { id: 8, name: 'Tiramisu', category: 'Desert', price: 19.99, tag: 'Dessert', description: 'Pișcoturi, cremă mascarpone, cafea și pudră fină de cacao.', image: svgImage('Tiramisu', '#5d4037', '#3e2723', '🍰') },
+      { id: 9, name: 'Lava Cake', category: 'Desert', price: 21.50, tag: 'Ciocolată', description: 'Prăjitură caldă cu interior curgător de ciocolată.', image: svgImage('Lava Cake', '#4a235a', '#2c1449', '🍫') },
+      { id: 10, name: 'Limonadă', category: 'Băuturi', price: 12.50, tag: 'Fresh', description: 'Lămâie proaspătă, mentă, gheață și sirop ușor dulce-acrișor.', image: svgImage('Limonadă', '#b7860b', '#7d5a08', '🍋') },
+      { id: 11, name: 'Cola 500ml', category: 'Băuturi', price: 9.50, tag: 'Rece', description: 'Băutură răcoritoare servită rece, ideală lângă pizza.', image: svgImage('Cola 500ml', '#1a1a1a', '#0a0a0a', '🥤') },
+      { id: 12, name: 'Apă plată 500ml', category: 'Băuturi', price: 7.00, tag: 'Simplu', description: 'Apă plată rece, potrivită pentru orice comandă.', image: svgImage('Apă plată', '#1a4a6b', '#0d2a3e', '💧') }
+    ];
+
+    const filtersEl = document.getElementById('filters');
+    const menuGrid = document.getElementById('menuGrid');
+    const cartItemsEl = document.getElementById('cartItems');
+    const cartCountEl = document.getElementById('cartCount');
+    const subtotalEl = document.getElementById('subtotal');
+    const totalEl = document.getElementById('total');
+    const deliveryEl = document.getElementById('delivery');
+    const toastEl = document.getElementById('toast');
+    const overlay = document.getElementById('overlay');
+    const cartPanel = document.getElementById('cartPanel');
+    const customerName = document.getElementById('customerName');
+    const customerPhone = document.getElementById('customerPhone');
+    const customerAddress = document.getElementById('customerAddress');
+    const customerNotes = document.getElementById('customerNotes');
+
+    let selectedCategory = 'Toate';
+    let cart = [];
+
+    const formatPrice = v => `${v.toFixed(2)} lei`;
+
+    function showToast(msg) {
+      toastEl.textContent = msg;
+      toastEl.classList.add('show');
+      clearTimeout(showToast.t);
+      showToast.t = setTimeout(() => toastEl.classList.remove('show'), 2000);
+    }
+
+    function renderFilters() {
+      const cats = ['Toate', ...new Set(products.map(p => p.category))];
+      filtersEl.innerHTML = cats.map(c => `
+        <button class="filter-btn ${c === selectedCategory ? 'active' : ''}" data-category="${c}">${c}</button>
+      `).join('');
+      filtersEl.querySelectorAll('button').forEach(b => {
+        b.addEventListener('click', () => {
+          selectedCategory = b.dataset.category;
+          renderFilters();
+          renderProducts();
+        });
+      });
+    }
+
+    function renderProducts() {
+      const filtered = selectedCategory === 'Toate' ? products : products.filter(p => p.category === selectedCategory);
+      menuGrid.innerHTML = filtered.map(p => `
+        <article class="menu-card">
+          <div class="menu-image">
+            <img src="${p.image}" alt="${p.name}" />
+            <span class="tag">${p.tag}</span>
+          </div>
+          <div class="menu-content">
+            <div>
+              <h3>${p.name}</h3>
+              <p>${p.description}</p>
+            </div>
+            <div class="price-row">
+              <span class="price">${formatPrice(p.price)}</span>
+              <button class="add-btn" onclick="addToCart(${p.id})">+ Adaugă</button>
+            </div>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function addToCart(id) {
+      const p = products.find(x => x.id === id);
+      const ex = cart.find(x => x.id === id);
+      if (ex) ex.quantity += 1;
+      else cart.push({ ...p, quantity: 1 });
+      renderCart();
+      showToast(`${p.name} a fost adăugat în coș.`);
+    }
+
+    function updateQuantity(id, amount) {
+      const item = cart.find(x => x.id === id);
+      if (!item) return;
+      item.quantity += amount;
+      if (item.quantity <= 0) cart = cart.filter(x => x.id !== id);
+      renderCart();
+    }
+
+    function removeFromCart(id) {
+      cart = cart.filter(x => x.id !== id);
+      renderCart();
+      showToast('Produsul a fost eliminat din coș.');
+    }
+
+    function renderCart() {
+      const subtotal = cart.reduce((s, i) => s + i.price * i.quantity, 0);
+      const totalItems = cart.reduce((s, i) => s + i.quantity, 0);
+      const total = subtotal + (cart.length ? DELIVERY_FEE : 0);
+
+      cartCountEl.textContent = totalItems;
+      subtotalEl.textContent = formatPrice(subtotal);
+      deliveryEl.textContent = cart.length ? formatPrice(DELIVERY_FEE) : formatPrice(0);
+      totalEl.textContent = formatPrice(total);
+
+      if (!cart.length) {
+        cartItemsEl.innerHTML = `
+          <div class="cart-empty">
+            <h3>Coșul este gol</h3>
+            <p>Adaugă produse din meniu pentru a trimite comanda pe WhatsApp.</p>
+          </div>`;
+        return;
+      }
+
+      cartItemsEl.innerHTML = cart.map(item => `
+        <div class="cart-item">
+          <img src="${item.image}" alt="${item.name}" />
+          <div>
+            <h4>${item.name}</h4>
+            <small>${formatPrice(item.price)} / bucată</small>
+            <div class="qty-controls">
+              <button onclick="updateQuantity(${item.id}, -1)">−</button>
+              <span>${item.quantity}</span>
+              <button onclick="updateQuantity(${item.id}, 1)">+</button>
+            </div>
+          </div>
+          <div style="text-align:right; display:flex; flex-direction:column; gap:6px; align-items:flex-end;">
+            <strong style="color:var(--gold2); font-family:'Playfair Display',serif;">${formatPrice(item.price * item.quantity)}</strong>
+            <button class="remove-btn" onclick="removeFromCart(${item.id})">Șterge</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function openCart() { cartPanel.classList.add('show'); overlay.classList.add('show'); document.body.style.overflow = 'hidden'; }
+    function closeCart() { cartPanel.classList.remove('show'); overlay.classList.remove('show'); document.body.style.overflow = ''; }
+
+    function sendOrderOnWhatsApp() {
+      if (!cart.length) { showToast('Adaugă mai întâi produse în coș.'); openCart(); return; }
+      const name = customerName.value.trim();
+      const phone = customerPhone.value.trim();
+      const address = customerAddress.value.trim();
+      const notes = customerNotes.value.trim();
+      if (!name || !phone || !address) { showToast('Completează numele, telefonul și adresa.'); openCart(); return; }
+      const subtotal = cart.reduce((s, i) => s + i.price * i.quantity, 0);
+      const total = subtotal + DELIVERY_FEE;
+      const orderLines = cart.map(i => ` • ${i.name} x${i.quantity} = ${formatPrice(i.price * i.quantity)}`);
+      const message = ['Salut! Vreau să plasez o comandă:', '', ...orderLines, '', `Subtotal: ${formatPrice(subtotal)}`, `Livrare: ${formatPrice(DELIVERY_FEE)}`, `Total: ${formatPrice(total)}`, '', `Nume: ${name}`, `Telefon: ${phone}`, `Adresă: ${address}`, `Detalii: ${notes || 'Nu sunt detalii suplimentare.'}`].join('\n');
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
+    }
+
+    document.getElementById('openCartBtn').addEventListener('click', openCart);
+    document.getElementById('closeCartBtn').addEventListener('click', closeCart);
+    document.getElementById('whatsappOrderBtn').addEventListener('click', sendOrderOnWhatsApp);
+    overlay.addEventListener('click', closeCart);
+
+    renderFilters();
+    renderProducts();
+    renderCart();
+
+    window.addToCart = addToCart;
+    window.updateQuantity = updateQuantity;
+    window.removeFromCart = removeFromCart;
+  </script>
+</body>
+</html>
